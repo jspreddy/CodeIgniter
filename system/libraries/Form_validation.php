@@ -173,6 +173,21 @@ class CI_Form_validation {
 			return $this;
 		}
 
+		return $this->_set_rules($field, $label, $rules, $errors);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Set Rules, protected method. This is where all the main logic for setting the rules is.
+	 * 
+	 * @param   mixed 	$field
+	 * @param 	string 	$label
+	 * @param 	mixed  	$rules
+	 * @param 	array  	$errors
+	 * @return 	CI_Form_validation
+	 */
+	protected function _set_rules($field, $label = '', $rules = array(), $errors = array()){
 		// If an array was passed via the first parameter instead of individual string
 		// values we cycle through it and recursively call this function.
 		if (is_array($field))
